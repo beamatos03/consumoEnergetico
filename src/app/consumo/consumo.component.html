@@ -1,9 +1,10 @@
-<form action="">
+<div class="container" id="calculo">
+  <form action="">
     <h2>Cálculo de consumo energético</h2>
     <div class="mb-3">
       <label class="form-label">Nome: </label>
       <input type="text" class="form-control" id="nome" [(ngModel)]="nome">
-      <div id="" class="form-text">info adc</div>
+      <div id="" class="form-text">Seus dados não serão armazenados ou compartilhados.</div>
     </div>
     <div class="mb-3 row">
       <div class="col-md-6">
@@ -31,17 +32,18 @@
     <div class="col-md-6">
         <label class="form-label">Quantidade de computadores: </label>
         <input type="number" class="form-control" id="PC" [(ngModel)]="qtdPC">
-    </div> 
+    </div>
     </div>
 
-    <div class="mb-3 row d-flex">
+    <div class="mb-3 row align-items-end">
       <div class="col-md-6">
         <label class="form-label">Valor da Tarifa: </label>
         <input type="number" class="form-control" id="valor" [(ngModel)]="valor">
       </div>
       <div class="col-md-6">
-        <input class="form-check-label" [value]="resultado" readonly>
+
         <button type="button" class="btn btn-outline-dark" (click)="consumo()">Calcular</button>
       </div>
   </div>
   </form>
+</div>
