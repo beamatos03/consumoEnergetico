@@ -1,0 +1,47 @@
+<form action="">
+    <h2>Cálculo de consumo energético</h2>
+    <div class="mb-3">
+      <label class="form-label">Nome: </label>
+      <input type="text" class="form-control" id="nome" [(ngModel)]="nome">
+      <div id="" class="form-text">info adc</div>
+    </div>
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label class="form-label">Número de moradores: </label>
+        <input type="number" class="form-control" id="moradores" [(ngModel)]="qtdMoradores">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Quantidade de comodos: </label>
+        <input type="number" class="form-control" id="comodos" [(ngModel)]="qtdComodos">
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" [(ngModel)]="maquina" name="maquina" class="form-check-input" id="maq">
+      <label class="form-check-label" for="maq">Possui máquina de lavar?</label>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" [(ngModel)]="secadora" name="secadora" class="form-check-input" id="sec">
+        <label class="form-check-label"  for="sec">Possui secadora de roupas?</label>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Quantidade de aparelhos de TV: </label>
+        <input type="number" class="form-control" id="TV" [(ngModel)]="qtdTV">
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Quantidade de computadores: </label>
+        <input type="number" class="form-control" id="PC" [(ngModel)]="qtdPC">
+    </div> 
+    </div>
+
+    <div class="mb-3 row d-flex">
+      <div class="col-md-6">
+        <label class="form-label">Valor da Tarifa: </label>
+        <input type="number" class="form-control" id="valor" [(ngModel)]="valor">
+      </div>
+      <div class="col-md-6">
+        <input class="form-check-label" [value]="resultado" readonly>
+        <button type="button" class="btn btn-outline-dark" (click)="consumo()">Calcular</button>
+      </div>
+  </div>
+  </form>
