@@ -1,6 +1,7 @@
-<div class="container" id="calculo">
+<div class="container bg-light rounded p-2" id="calculo">
   <form action="">
-    <h2>Cálculo de consumo energético</h2>
+    <div class="display-6 text-center">Cálculo de consumo energético</div>
+  
     <div class="mb-3">
       <label class="form-label">Nome: </label>
       <input type="text" class="form-control" id="nome" [(ngModel)]="nome">
@@ -9,11 +10,11 @@
     <div class="mb-3 row">
       <div class="col-md-6">
         <label class="form-label">Número de moradores: </label>
-        <input type="number" class="form-control" id="moradores" [(ngModel)]="qtdMoradores">
+        <input type="number" class="form-control" id="moradores" name="mor" [(ngModel)]="qtdMoradores">
       </div>
       <div class="col-md-6">
         <label class="form-label">Quantidade de comodos: </label>
-        <input type="number" class="form-control" id="comodos" [(ngModel)]="qtdComodos">
+        <input type="number" class="form-control" id="comodos" name="com" [(ngModel)]="qtdComodos">
       </div>
     </div>
     <div class="mb-3 form-check">
@@ -27,23 +28,37 @@
     <div class="row mb-3">
       <div class="col-md-6">
         <label class="form-label">Quantidade de aparelhos de TV: </label>
-        <input type="number" class="form-control" id="TV" [(ngModel)]="qtdTV">
+        <input type="number" class="form-control" id="TV" name="TV" [(ngModel)]="qtdTV">
     </div>
     <div class="col-md-6">
         <label class="form-label">Quantidade de computadores: </label>
-        <input type="number" class="form-control" id="PC" [(ngModel)]="qtdPC">
+        <input type="number" class="form-control" id="PC" name="PC" [(ngModel)]="qtdPC">
     </div>
     </div>
 
     <div class="mb-3 row align-items-end">
       <div class="col-md-6">
         <label class="form-label">Valor da Tarifa: </label>
-        <input type="number" class="form-control" id="valor" [(ngModel)]="valor">
+        <input type="number" class="form-control" name="valor" id="valor" [(ngModel)]="valor">
       </div>
       <div class="col-md-6">
 
-        <button type="button" class="btn btn-outline-dark" (click)="consumo()">Calcular</button>
+        <button type="button" class="btn btn-outline-dark" (click)="Consumo()">Calcular</button>
       </div>
   </div>
+
+
+  <div class="mb-3 row align-items-end">
+    <div class="col-md-6">
+      <label class="form-label">Consumo mensal: </label>
+      <input type="" class="form-control" id="valorConsumo" name="consumo" [value]="consumo" readonly>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Valor mensal: </label>
+      <input type="" class="form-control" id="valorPreco" name="preco" [value]="valorTotal" readonly>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
   </form>
 </div>

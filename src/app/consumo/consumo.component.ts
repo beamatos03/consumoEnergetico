@@ -22,6 +22,8 @@ export class ConsumoComponent {
   consumoSec : number = 0;
   consumoLamp : number = 0;
   consumoTotal : number = 0;
+  valorTotal : string = "";
+  consumo : string = "";
 
   chuveiroWatts : number = 5000;
   TVWatts : number = 200;
@@ -30,7 +32,7 @@ export class ConsumoComponent {
   lampWatts : number = 60;
   maqWatts : number = 1000;
 
-consumo(){
+Consumo(){
   if(this.secadora){
     this.consumoSec = (3500*1*12)/1000;
     //(consumo*horas*dias)100
@@ -49,12 +51,13 @@ consumo(){
     this.consumoBanho = this.calcular(this.chuveiroWatts, 0.166667, 30, this.qtdMoradores);
     this.consumoLamp = this.calcular(this.lampWatts, 8,30, this.qtdComodos);
 
-
+  this.valorTotal = "R$"+(this.consumoTotal * this.valor).toFixed(2);
+  this.consumo = this.consumoTotal.toFixed(2) + "kWh"
 
   }
 
 
-calcular(watts: number, horas: number, dias: number, qtd: number){
+calcular(watts: number, horas: number, dias: number, qtd: number):number{
   let consumo = 0;
 
   if(qtd>0){
